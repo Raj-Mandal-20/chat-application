@@ -22,7 +22,7 @@ class Feed extends Component {
   };
 
   componentDidMount() {
-    fetch("http://54.89.150.80:8000/feed/status", {
+    fetch("https://3.209.184.190/feed/status", {
       headers: {
         Authorization: "Bearer " + this.props.token,
       },
@@ -40,7 +40,7 @@ class Feed extends Component {
       .catch(this.catchError);
 
     this.loadPosts();
-    openSocket("http://54.89.150.80:8000", {
+    openSocket("https://3.209.184.190/", {
       header : {
         'Content-Type' : 'application/json'  
       }
@@ -63,7 +63,7 @@ class Feed extends Component {
 
     // console.log(this.props.token);3.023
 
-    fetch("http://54.89.150.80:8000/feed/posts?page=" + page, {
+    fetch("https://3.209.184.190/feed/posts?page=" + page, {
       headers: {
         Authorization: "Bearer " + this.props.token,
       },
@@ -91,7 +91,7 @@ class Feed extends Component {
 
   statusUpdateHandler = (event) => {
     event.preventDefault();
-    fetch("http://54.89.150.80:8000/feed/ustatus", {
+    fetch("https://3.209.184.190/feed/ustatus", {
       method : 'PUT',
       headers : {
         Authorization : 'Bearer '+this.props.token,
@@ -146,10 +146,10 @@ class Feed extends Component {
     formData.append("content", postData.content);
     formData.append("image", postData.image);
 
-    let url = "http://54.89.150.80:8000/feed/post";
+    let url = "https://3.209.184.190/feed/post";
     let method = "POST";
     if (this.state.editPost) {
-      url = "http://54.89.150.80:8000/feed/post/" + this.state.editPost._id;
+      url = "https://3.209.184.190/feed/post/" + this.state.editPost._id;
       method = "PUT";
     }
 
@@ -210,7 +210,7 @@ class Feed extends Component {
 
   deletePostHandler = (postId) => {
     this.setState({ postsLoading: true });
-    fetch("http://54.89.150.80:8000/feed/post/" + postId, {
+    fetch("https://3.209.184.190/feed/post/" + postId, {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + this.props.token,

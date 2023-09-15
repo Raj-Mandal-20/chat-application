@@ -60,7 +60,7 @@ class App extends Component {
     event.preventDefault();
     this.setState({ authLoading: true });
     console.log(authData);
-    fetch("http://54.89.150.80:8000/auth/login", {
+    fetch("https://3.209.184.190/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -110,7 +110,7 @@ class App extends Component {
   signupHandler = (event, authData) => {
     event.preventDefault();
     this.setState({ authLoading: true });
-    fetch("http://54.89.150.80:8000/auth/signup", {
+    fetch("https://3.209.184.190/auth/signup", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

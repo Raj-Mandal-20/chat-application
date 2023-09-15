@@ -14,7 +14,7 @@ class SinglePost extends Component {
 
   componentDidMount() {
     const postId = this.props.match.params.postId;
-    fetch(`http://54.89.150.80:8000/feed/post/${postId}`, {
+    fetch(`https://3.209.184.190/feed/post/${postId}`, {
       headers : {
         Authorization : 'Bearer '+ this.props.token
       }
@@ -29,7 +29,7 @@ class SinglePost extends Component {
         this.setState({
           title: resData.post.title,
           author: resData.post.creator.name,
-          image : 'http://54.89.150.80:8000/'+ resData.post.imageUrl ,
+          image : 'https://3.209.184.190/'+ resData.post.imageUrl ,
           date: new Date(resData.post.createdAt).toLocaleDateString('en-US'),
           content: resData.post.content
         });
