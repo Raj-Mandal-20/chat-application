@@ -111,7 +111,7 @@ class Feed extends Component {
         });
       })
       .then((resData) => {
-        console.log(resData);
+        // console.log(resData);
       })
       .catch(this.catchError);
   };
@@ -136,7 +136,7 @@ class Feed extends Component {
   };
 
   finishEditHandler = (postData) => {
-    console.log(postData);
+    // console.log(postData);
     this.setState({
       editLoading: true,
     });
@@ -167,7 +167,7 @@ class Feed extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
+        // console.log(resData);
         const post = {
           _id: resData.post._id,
           title: resData.post.title,
@@ -194,7 +194,7 @@ class Feed extends Component {
         });
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         this.setState({
           isEditing: false,
           editPost: null,
@@ -223,14 +223,14 @@ class Feed extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
+        // console.log(resData);
         this.setState((prevState) => {
           const updatedPosts = prevState.posts.filter((p) => p._id !== postId);
           return { posts: updatedPosts, postsLoading: false };
         });
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         this.setState({ postsLoading: false });
       });
   };
